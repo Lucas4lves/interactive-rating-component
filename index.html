@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;700&display=swap');
+
+    .attribution { color: hsl(0, 0%, 100%);font-size: 11px; text-align: center; max-height: 5vh; font-family: 'Overpass', sans-serif; }
+    .attribution a { color: hsl(25, 97%, 53%); text-decoration: none; }
+
+    *::after,::before{ 
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{ 
+      font-family: 'Overpass', sans-serif;
+      background-color: hsl(216, 12%, 8%);
+    }
+
+    .main{ 
+      height: 90vh;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main__card{ 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background-color: hsl(213, 19%, 18%);
+      width: 25%;
+      height: 50%;
+      padding: 1.5em;
+      border-radius: 30px;
+    }
+
+    .main__card--icon { 
+      content: url(./images/icon-star.svg);
+      width: calc(20px - .5em);
+      height: calc(20px - .5em);
+      padding: 1em;
+      border-radius: 50%;
+      background-color:hsl(216, 12%, 25%);
+    }
+
+    .main__card--heading {
+      margin: 0;
+      color: hsl(0, 0%, 100%);
+      font-weight: 700;
+    }
+
+    .main__card--call-to-action { 
+      margin: 0;
+      color: hsl(0, 0%, 100%);
+      font-weight: 200;
+    }
+
+    .main__card--rating-display{ 
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .main__card--rating-btn { 
+      cursor: pointer;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border: none;
+      color: hsl(0, 0%, 100%);
+      background-color: hsl(216, 12%, 25%);
+    }
+
+
+    .main__card--submit-btn { 
+      background-color: hsl(25, 97%, 53%);
+      padding: .5em;
+      border: none;
+      border-radius: 10px;
+      color: hsl(0, 0%, 100%);
+      font-weight: 400;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Overpass', sans-serif;
+    }
+
+    .main__card--submit-btn:hover { 
+        color: hsl(25, 97%, 53%);
+        background-color: hsl(0, 0%, 100%);
+        font-weight: 700;
+    }
+
+    .active { 
+      color: hsl(0, 0%, 100%);
+      background-color: hsl(25, 97%, 53%);
+    }
+
+    .main__thank-you-card { 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 25%;
+        height: 50%;
+        padding: 1.5em;
+        border-radius: 30px;
+        background-color: hsl(213, 19%, 18%);
+        color: hsl(0, 0%, 100%);
+    }
+    
+    .main__thank-you-card--img{ 
+      width: 25%;
+      height: 25%;
+    }
+
+    .main__thank-you-card--rating { 
+      display: flex;
+      align-items: center;
+      margin-top: 1em;
+      margin-bottom: 0;
+      padding: .8em;
+      background-color: hsl(216, 12%, 25%);
+      border-radius: 30px;
+      color: hsl(25, 97%, 53%);
+    }
+
+
+    @media screen and (min-width: 360px){
+        .main__card, .main__thank-you-card { 
+        width: 80%;
+        height: 50%;
+        border-radius: 10px;
+
+      }
+    }
+
+    @media screen and (min-width: 768px){
+        .main__card, .main__thank-you-card { 
+        width: 40%;
+        height: 40%;
+
+      }
+
+    }
+
+    @media screen and (min-width: 1024px){
+        .main__card, .main__thank-you-card{ 
+        width: 25%;
+        height: 50%;
+      }
+
+      /* .main__thank-you-card { 
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        height: 50%;
+        padding: 1.5em;
+        border-radius: 30px;
+    } */
+
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Rating state start -->
+  <main class="main">
+    <article class="main__card">
+      <span class="main__card--icon"></span>
+      <h1 class="main__card--heading">How did we do?</h1>
+    
+      <p class="main__card--call-to-action">
+        Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!
+      </p>
+      <section class="main__card--rating-display">
+        <button class="main__card--rating-btn" value="1" autofocus>1</button>
+        <button class="main__card--rating-btn" value="2">2</button>
+        <button class="main__card--rating-btn" value="3">3</button>
+        <button class="main__card--rating-btn" value="4">4</button>
+        <button class="main__card--rating-btn" value="5">5</button>
+      </section>
+    
+      <button class="main__card--submit-btn">Submit</button>
+
+    </article>
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Lucas4lves">Lucas Alves</a> <span class="year"></span>.
+  </div>
+</body>
+<script src="./script.js"></script>
+<script src="./footer.js"></script>
+</html>
